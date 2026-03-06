@@ -1,0 +1,155 @@
+Html
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8 Наурыз – Лаура анама</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(120deg, #ffb6c1, #ffe4e1, #fff0f5);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position:0% 50%;}
+      50% {background-position:100% 50%;}
+      100% {background-position:0% 50%;}
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      color: white;
+      font-family: 'Pacifico', cursive;
+      text-shadow: 2px 2px 6px #ff3399;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    section {
+      margin-bottom: 60px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+      background: rgba(255,255,255,0.6);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      color: #ff3399;
+      margin-bottom: 15px;
+      text-align: center;
+      font-size: 2em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      background-color: #ff99cc;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2em;
+      text-shadow: 1px 1px 2px #ff3399;
+    }
+
+    /* Floating flowers animation */
+    .flower {
+      position: absolute;
+      font-size: 2em;
+      animation: floatFlower linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatFlower {
+      0% {transform: translateY(0) rotate(0deg);}
+      100% {transform: translateY(-1200px) rotate(360deg);}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🌸 8 Наурыз – Лаура анама 🌸</h1>
+</header>
+
+<main>
+  <section>
+    <h2>Құрметті Лаура ана!</h2>
+    <p>Бүгін біз жүрегімізді жылытып, махаббатқа толы мерекені атап өтеміз – <strong>8 Наурыз Халықаралық әйелдер күні</strong>. Бұл күн тек сен үшін, менің сүйікті анам Лаура!</p>
+  </section>
+
+  <section>
+    <h2>Анаға арнау</h2>
+    <p>Лаура анам, сенің мейірімің мен қамқорлығың – мен үшін ең үлкен байлық. Сен әрқашан қиын сәтте қолдау көрсетіп, өмірге үміт пен қуаныш сыйлайсың. Сенің әрбір жылы сөзің мен кеңесің – мен үшін алтыннан қымбат.</p>
+  </section>
+
+  <section>
+    <h2>Мерекелік тілектер</h2>
+    <p>Бүгінгі күн саған тек гүлдер мен сыйлықтар әкеліп қана қоймай, жүрегіңе шаттық пен махаббат сыйласын. Сен – біздің отбасының жүрегі, тірегі. Саған денсаулық, ұзақ ғұмыр, бақыт пен шаттық тілеймін!</p>
+  </section>
+
+  <section>
+    <h2>Қорытынды</h2>
+    <p>Қымбатты Лаура ана, осы мереке күні саған шын жүректен рахмет айтып, жан дүниеңе махаббат пен қуаныш тілеймін! Сенің мейірімің әрдайым жүрегімде сақталып, мені күш-қуатпен толтырады.</p>
+  </section>
+</main>
+
+<footer>
+  Құрметпен, [Сіздің атыңыз]
+</footer>
+
+<script>
+  // Sections fade-in on scroll
+  const sections = document.querySelectorAll('section');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {threshold: 0.2});
+
+  sections.forEach(section => observer.observe(section));
+
+  // Random floating flowers
+  const flowers = ["🌸","🌹","🌷","💐","🌺"];
+  for(let i=0;i<30;i++){
+    const span = document.createElement('span');
+    span.classList.add('flower');
+    span.textContent = flowers[Math.floor(Math.random()*flowers.length)];
+    span.style.left = Math.random()*100 + "vw";
+    span.style.animationDuration = 10 + Math.random()*10 + "s";
+    span.style.fontSize = 20 + Math.random()*40 + "px";
+    document.body.appendChild(span);
+  }
+</script>
+
+</body>
+</html>
