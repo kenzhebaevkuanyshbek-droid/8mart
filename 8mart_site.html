@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8 Наурыз Құтты Болсын</title>
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    text-align:center;
+    background: linear-gradient(135deg,#ff9ecf,#ffffff);
+}
+.container{
+    margin-top:120px;
+    padding:20px;
+}
+h1{
+    font-size:42px;
+    color:#d81b60;
+}
+p{
+    font-size:20px;
+}
+button{
+    margin-top:20px;
+    padding:15px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:12px;
+    background:#ff4da6;
+    color:white;
+    cursor:pointer;
+}
+button:hover{
+    background:#e60073;
+}
+.message{
+    display:none;
+    margin-top:30px;
+    font-size:22px;
+    color:#880e4f;
+}
+.flowers{
+    font-size:28px;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>🌸 8 Наурыз Құтты Болсын! 🌸</h1>
+<p>Құрметті аналар, әжелер, әпкелер және қыздар!</p>
+
+<button onclick="showMessage()">Құттықтауды ашу</button>
+
+<div class="message" id="msg">
+Сіздерді Халықаралық әйелдер күнімен шын жүректен құттықтаймыз! <br><br>
+Сіздерге зор денсаулық, бақыт, қуаныш және мол табыс тілейміз! 💐
+<div class="flowers">🌷 🌹 🌸 🌺 🌷</div>
+</div>
+</div>
+
+<script>
+function showMessage(){
+    document.getElementById("msg").style.display="block";
+}
+</script>
+
+</body>
+</html>
